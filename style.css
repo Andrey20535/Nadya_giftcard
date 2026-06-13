@@ -688,8 +688,8 @@ body {
 
     .cricle {
         position: absolute;
-        top: 10px;
-        right: -54px;
+        top: -10px; /* Поднимаем кружок чуть выше */
+        right: -30px; /* Сдвигаем его чуть правее от картинки */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -777,13 +777,18 @@ body {
 
     .name {
         position: absolute;
-        padding: 0px 3px;
-        bottom: -6px;
+        padding: 5px 15px; /* Даем тексту больше воздуха */
+        bottom: -15px; /* Опускаем плашку чуть ниже, чтобы она перекрывала границу круга */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translateX(-50%); /* Точная центровка */
         border: 3px solid var(--color-black);
+        background-color: var(--color-text-pink);
+        white-space: nowrap;
+        z-index: 2; /* Чтобы плашка всегда была поверх картинки */
     }
 
     .name span {
-        font-size: 1rem;
+        font-size: 1.1rem; /* Чуть увеличим шрифт для красоты */
     }
 
     .right .balloon_one {
