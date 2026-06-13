@@ -183,13 +183,13 @@ body {
 
 @keyframes topHatMobile {
         20%, 30% {
-            top: -45px; 
+            top: -20px; /* Опускаем на нужную высоту */
             transform-origin: left;
             transform: rotate(-40deg);
         }
         35%, 100% {
-            top: -45px;
-            transform: rotate(10deg);
+            top: -20px;
+            transform: rotate(5deg); /* Чуть наклоняем */
         }
     }
 
@@ -240,12 +240,17 @@ body {
 }
 .name{
     position: absolute;
-    padding: 0px 20px;
-    bottom: -20px;
-    border: 3px solid var(--color-black);
-    font-family: 'Dancing Script', cursive;
-    white-space: nowrap;
-}
+        padding: 5px 20px;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 3px solid var(--color-black);
+        background-color: var(--color-text-pink);
+        white-space: nowrap;
+        width: max-content; /* <-- Ключевое исправление ширины */
+        z-index: 2;
+    }
+
 .date__of__birth span, .name span{
     font-weight: bold;
     margin: 0px 40px;
@@ -371,14 +376,15 @@ position: absolute;
 }
 .right .balloon_two {
         position: absolute;
-        top: 40px; 
-        right: -15px; /* Сдвигаем сильно влево к фото */
+        top: 130px; /* Опускаем шарик НИЖЕ крутящегося текста */
+        right: -25px; /* Прижимаем правее к рамке */
         z-index: -1; 
         transform: rotate(10deg);
         animation: balloon2 2s infinite linear;
     }
+
     .right .balloon_two img {
-        width: 70px !important;
+        width: 65px !important;
     }
 
 @keyframes balloon2 {
@@ -707,18 +713,27 @@ position: absolute;
 
     .cricle {
         position: absolute;
-        top: 10px;
-        right: -60px; /* Увеличили отступ, чтобы текст не касался черного круга */
+        top: 0px;
+        right: -75px; /* Отодвигаем правее */
         display: flex;
         justify-content: center;
         align-items: center;
         transform: scale(0);
-        animation: scaleCricle 3s 15s forwards ease-in-out;
+        animation: scaleCricleMobile 3s 15s forwards ease-in-out; /* <-- Новая мобильная анимация */
     }
 
+    @keyframes scaleCricleMobile {
+        0% { transform: scale(0); }
+        10% { transform: scale(1.1); }
+        20% { transform: scale(0.6); }
+        30%, 100% { transform: scale(0.85); }
+    }
+
+    
+
     .title .hat {
-        position: absolute;
-        right: -10px;
+       position: absolute;
+        right: -60px; /* Сдвиг вправо */
         top: -350px; 
         transform: rotate(-40deg);
         z-index: -1;
@@ -812,13 +827,14 @@ position: absolute;
 
     .right .balloon_one {
         position: absolute;
-        top: 10px;
-        left: -77px;
+        top: 30px; 
+        left: -20px; /* Прижимаем левее к рамке */
+        z-index: -1;
         animation: balloon1 2s infinite linear;
     }
 
     .right .balloon_one img{
-        width: 70px !important; /* Уменьшаем шарик для пропорции */
+        width: 65px !important;
     }
 
 
