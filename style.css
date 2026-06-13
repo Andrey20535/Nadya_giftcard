@@ -183,15 +183,16 @@ body {
 
 @keyframes topHatMobile {
         20%, 30% {
-            top: -40px; /* Высота, на которую он должен упасть */
+            top: -45px; 
             transform-origin: left;
             transform: rotate(-40deg);
         }
         35%, 100% {
-            top: -40px;
-            transform: rotate(10deg); /* Чуть наклоняем для красоты */
+            top: -45px;
+            transform: rotate(10deg);
         }
     }
+
 
 .date__of__birth, .name{
     display: flex;
@@ -347,13 +348,13 @@ body {
         transform: scale(1.2);
     }
 }
-.right .balloon_one{
-    position: absolute;
-        top: 60px; /* Опускаем, чтобы нитка касалась круга */
-        left: -35px; /* Придвигаем ближе */
-        z-index: -1; /* Прячем нитку ЗА фотографию */
+position: absolute;
+        top: 20px; 
+        left: -15px; /* Сдвигаем сильно вправо, чтобы нитка спряталась за фото */
+        z-index: -1;
         animation: balloon1 2s infinite linear;
     }
+
 @keyframes balloon1{
     0%, 50%,100%{
         transform-origin: bottom right;
@@ -368,16 +369,15 @@ body {
         transform: rotate(-3deg);
     }
 }
-.right .balloon_two{
-    position: absolute;
-        top: 100px; 
-        right: -30px; 
+.right .balloon_two {
+        position: absolute;
+        top: 40px; 
+        right: -15px; /* Сдвигаем сильно влево к фото */
         z-index: -1; 
         transform: rotate(10deg);
         animation: balloon2 2s infinite linear;
     }
-
-.right .balloon_two img {
+    .right .balloon_two img {
         width: 70px !important;
     }
 
@@ -707,8 +707,8 @@ body {
 
     .cricle {
         position: absolute;
-        top: -10px; /* Поднимаем кружок чуть выше */
-        right: -30px; /* Сдвигаем его чуть правее от картинки */
+        top: 10px;
+        right: -60px; /* Увеличили отступ, чтобы текст не касался черного круга */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -718,11 +718,11 @@ body {
 
     .title .hat {
         position: absolute;
-        right: -30px;
-        top: -350px !important; /* Прячем за пределы экрана */
+        right: -10px;
+        top: -350px; 
         transform: rotate(-40deg);
         z-index: -1;
-        animation: topHatMobile 4s 7s forwards ease !important;
+        animation: topHatMobile 4s 7s forwards ease;
     }
 
     .box__letter .letter__border {
